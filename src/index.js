@@ -26,7 +26,7 @@ class App extends React.Component {
       return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <Spinner/>;
+    return <Spinner message="Please accept location request to load the page..."/>;
   }
 }
 ReactDOM.render(<App/>, document.querySelector('#root'));
