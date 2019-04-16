@@ -17,7 +17,7 @@ class App extends React.Component {
     console.log('My Component was updated');
   }
 
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>;
     }
@@ -27,6 +27,14 @@ class App extends React.Component {
     }
 
     return <Spinner message="Please accept location request to load the page..."/>;
+  }
+
+  render() {
+    return(
+      <div className="border-red">
+        {this.renderContent()}
+      </div>
+    )
   }
 }
 ReactDOM.render(<App/>, document.querySelector('#root'));
